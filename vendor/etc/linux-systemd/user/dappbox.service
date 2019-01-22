@@ -1,0 +1,13 @@
+[Unit]
+Description=DappBox - Open Source Continuous File Synchronization
+Documentation=man:dappbox(1)
+Wants=dappbox-inotify.service
+
+[Service]
+ExecStart=/usr/bin/dappbox -no-browser -no-restart -logflags=0
+Restart=on-failure
+SuccessExitStatus=3 4
+RestartForceExitStatus=3 4
+
+[Install]
+WantedBy=default.target

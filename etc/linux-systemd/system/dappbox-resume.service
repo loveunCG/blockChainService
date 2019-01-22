@@ -1,0 +1,11 @@
+[Unit]
+Description=Restart DappBox after resume
+Documentation=man:dappbox(1)
+After=sleep.target
+
+[Service]
+Type=oneshot
+ExecStart=-/usr/bin/pkill -HUP -x dappbox
+
+[Install]
+WantedBy=sleep.target

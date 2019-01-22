@@ -1,0 +1,97 @@
+{
+  "contract_name": "AccessRights",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "hashfolder",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRight",
+      "outputs": [
+        {
+          "name": "device",
+          "type": "address"
+        },
+        {
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "rights",
+      "outputs": [
+        {
+          "name": "hashfolder",
+          "type": "bytes32"
+        },
+        {
+          "name": "device",
+          "type": "address"
+        },
+        {
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "hashfolder",
+          "type": "bytes32"
+        },
+        {
+          "name": "device",
+          "type": "address"
+        }
+      ],
+      "name": "addRight",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b60018054600160a060020a03191633600160a060020a03161790555b5b6102508061003c6000396000f300606060405263ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166325ee0f00811461005e5780638da5cb5b14610096578063d52fd095146100c5578063e7706fac14610107575b600080fd5b341561006957600080fd5b61007460043561013d565b604051600160a060020a03909216825260208201526040908101905180910390f35b34156100a157600080fd5b6100a9610168565b604051600160a060020a03909116815260200160405180910390f35b34156100d057600080fd5b6100db600435610177565b604051928352600160a060020a0390911660208301526040808301919091526060909101905180910390f35b341561011257600080fd5b610129600435600160a060020a03602435166101a1565b604051901515815260200160405180910390f35b60008181526020819052604090206001810154600290910154600160a060020a03909116905b915091565b600154600160a060020a031681565b6000602081905290815260409020805460018201546002909201549091600160a060020a03169083565b600060606040519081016040908152848252600160a060020a03841660208084019190915242828401526000868152908190522081518155602082015160018201805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055604082015160029091015550600190505b929150505600a165627a7a7230582087a81771c7e2cccc38733999c37cd5385f65c45419dfe11bb378d5a012fc52c60029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1505985509704
+}

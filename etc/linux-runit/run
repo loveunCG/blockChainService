@@ -1,0 +1,8 @@
+#!/bin/sh
+
+export USERNAME=jb
+export HOME="/home/$USERNAME"
+export DAPPBOX="$HOME/bin/dappbox"
+
+exec 2>&1
+exec chpst -u "$USERNAME" "$DAPPBOX" -logflags 0

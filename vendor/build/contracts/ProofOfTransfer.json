@@ -1,0 +1,109 @@
+{
+  "contract_name": "ProofOfTransfer",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "hashfile",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getProof",
+      "outputs": [
+        {
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "name": "receiver",
+          "type": "address"
+        },
+        {
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "proofs",
+      "outputs": [
+        {
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "name": "receiver",
+          "type": "address"
+        },
+        {
+          "name": "hashfile",
+          "type": "bytes32"
+        },
+        {
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "name": "receiver",
+          "type": "address"
+        },
+        {
+          "name": "hashfile",
+          "type": "bytes32"
+        }
+      ],
+      "name": "addProof",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b60018054600160a060020a03191633600160a060020a03161790555b5b6102b68061003c6000396000f300606060405263ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631b80bb3a811461005e578063444d95b0146100a15780638da5cb5b146100ec5780639d2517171461011b575b600080fd5b341561006957600080fd5b610074600435610157565b604051600160a060020a039384168152919092166020820152604080820192909252606001905180910390f35b34156100ac57600080fd5b6100b760043561018a565b604051600160a060020a0394851681529290931660208301526040808301919091526060820192909252608001905180910390f35b34156100f757600080fd5b6100ff6101be565b604051600160a060020a03909116815260200160405180910390f35b341561012657600080fd5b610143600160a060020a03600435811690602435166044356101cd565b604051901515815260200160405180910390f35b600081815260208190526040902080546001820154600390920154600160a060020a0391821692909116905b9193909250565b6000602081905290815260409020805460018201546002830154600390930154600160a060020a0392831693919092169184565b600154600160a060020a031681565b600060806040519081016040908152600160a060020a0380871683528516602080840191909152818301859052426060840152600085815290819052208151815473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0391909116178155602082015160018201805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a039290921691909117905560408201516002820155606082015160039091015550600190505b93925050505600a165627a7a723058202c59030380818d210dabd3f447e89aa156acd034a6ffeb294689b5e50812865e0029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1505985509709
+}

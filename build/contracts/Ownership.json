@@ -1,0 +1,114 @@
+{
+  "contract_name": "Ownership",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "ownerfile",
+          "type": "address"
+        },
+        {
+          "name": "hashfile",
+          "type": "bytes32"
+        }
+      ],
+      "name": "addDetails",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        },
+        {
+          "name": "hashfile",
+          "type": "bytes32"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "hashfile",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getDetails",
+      "outputs": [
+        {
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "name": "ownerfile",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "owners",
+      "outputs": [
+        {
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "name": "ownerfile",
+          "type": "address"
+        },
+        {
+          "name": "hashfile",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b60008054600160a060020a03191633600160a060020a03161790555b5b6102ef8061003c6000396000f300606060405263ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416634c5445c6811461006957806389e6b5fb1461009f5780638da5cb5b146100c3578063984bc700146100f2578063fb8ad6ff14610129575b600080fd5b341561007457600080fd5b61008b600160a060020a036004351660243561016b565b604051901515815260200160405180910390f35b34156100aa57600080fd5b6100c1600160a060020a03600435166024356101f0565b005b34156100ce57600080fd5b6100d6610263565b604051600160a060020a03909116815260200160405180910390f35b34156100fd57600080fd5b610108600435610272565b604051918252600160a060020a031660208201526040908101905180910390f35b341561013457600080fd5b61013f600435610297565b604051928352600160a060020a0390911660208301526040808301919091526060909101905180910390f35b600060606040519081016040908152428252600160a060020a038516602080840191909152818301859052600085815260019091522081518155602082015160018201805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055604082015160029091015550600190505b92915050565b60005433600160a060020a0390811691161461020b57600080fd5b600160a060020a038216151561022057600080fd5b6000818152600160208190526040909120908101805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0385161790554290555b5b5050565b600054600160a060020a031681565b60008181526001602081905260409091208054910154600160a060020a03165b915091565b6001602081905260009182526040909120805491810154600290910154600160a060020a0390911690835600a165627a7a723058208d68527f5e68d85cf3de811cee149dd528a554c64fe32ef13f54ae8cbed5d6920029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1505985509707
+}

@@ -1,0 +1,61 @@
+FROM golang:1.9
+
+RUN mkdir -p /go/src/github.com/AlphaDinoRC/dappBoxV2
+WORKDIR /go/src/github.com/dappbox/dappbox
+COPY . /go/src/github.com/dappbox/dappbox
+
+RUN apt-get install git
+RUN apt-get install wget
+RUN apt-get update
+RUN apt-get install -y apt-file
+RUN apt-file update
+RUN apt-get install -y software-properties-common
+RUN apt-get install -y vim
+RUN apt-get install -y nano
+RUN apt-get install -y neovim
+RUN go get -u -d github.com/Masterminds/glide
+RUN cd /go/src/github.com/Masterminds/glide && make install
+RUN go get -u -d github.com/shirou/gopsutil/disk
+RUN go get -u -d github.com/skip2/go-qrcode
+RUN go get -u -d github.com/influxdata/influxdb
+RUN go get -u -d github.com/sparrc/gdm
+RUN cd /go/src/github.com/sparrc/gdm && go install
+RUN wget -qO - http://download.sublimetext.com/sublimehq-pub.gpg | apt-key add - 
+RUN echo "deb http://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list
+RUN apt-get update && apt-get install sublime-text
+# RUN git clone https://github.com/tendermint/tendermint.git
+RUN go get -u -d github.com/tendermint/tendermint/cmd/tendermint; exit 0
+RUN cd /go/src/github.com/tendermint/tendermint && glide install && go install ./cmd/tendermint ; exit 0
+# RUN mv tendermint /go/src/github.com/tendermint
+# RUN git clone https://github.com/tendermint/ethermint.git
+# RUN go get -u -d github.com/tendermint/ethermint/cmd/ethermint; exit 0
+# RUN cd /go/src/github.com/tendermint/ethermint && go install ./cmd/ethermint ; exit 0
+# RUN mv ethermint /go/src/github.com/tendermint/ethermint
+RUN go get -u -d github.com/tendermint/abci/server
+RUN go get -u -d github.com/mattn/go-colorable
+RUN go get -u -d github.com/ethereum/go-ethereum
+RUN go get -u -d github.com/tendermint/tendermint/rpc/core/types
+RUN go get -u -d github.com/gorilla/websocket
+RUN go get -u -d github.com/rcrowley/go-metrics
+# RUN go get -u -d gopkg.in/urfave/cli.v1
+
+
+RUN cd /go/src/github.com/tendermint/ethermint && make install; exit 0
+# RUN cd ../tendermint && make install; exit 0
+RUN cd /go/src/github.com/influxdata/influxdb && gdm restore && go clean ./... && go build ./...
+RUN cd /go/src/github.com/AlphaDinoRC/dappBoxV2
+# RUN ./build.sh 
+# RUN ./build.sh test
+
+#
+
+RUN     echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+RUN     apt-get update
+
+# Install vnc, xvfb in order to create a 'fake' display and firefox
+RUN     apt-get install -y x11vnc xvfb firefox --allow-unauthenticated
+RUN     mkdir ~/.vnc
+# Setup a password
+RUN     x11vnc -storepasswd 1234 ~/.vnc/passwd
+# Autostart firefox (might not be the best way to do it, but it does the trick)
+RUN     bash -c 'echo "firefox" >> /.bashrc'

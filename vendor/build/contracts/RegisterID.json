@@ -1,0 +1,39 @@
+{
+  "contract_name": "RegisterID",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "register",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_id",
+          "type": "uint256"
+        }
+      ],
+      "name": "Register",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b60ca8061001e6000396000f300606060405263ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663f207564e8114603c575b600080fd5b3415604657600080fd5b604f6004356051565b005b3373ffffffffffffffffffffffffffffffffffffffff167e7dc6ab80cc84c043b7b8d4fcafc802187470087f7ea7fccd2e17aecd0256a18260405190815260200160405180910390a25b505600a165627a7a723058200f175514b0ad11df65ed5f6f01df49b3bdcdcd664ebc12b13f7634ee9e25995a0029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1505985509710
+}

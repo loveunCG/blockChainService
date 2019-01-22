@@ -1,0 +1,9 @@
+[dappbox]
+title=DappBox
+description=DappBox file synchronisation
+ports=22000/tcp|21027/udp
+
+[dappbox-gui]
+title=DappBox-GUI
+description=DappBox web gui
+ports=8384/tcp
